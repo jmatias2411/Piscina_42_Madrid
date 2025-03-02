@@ -9,7 +9,6 @@
 /*   Updated: 2025/03/01 18:08:36 by mpalomin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 #include <unistd.h>
 
 void	ft_putchar(char c)
