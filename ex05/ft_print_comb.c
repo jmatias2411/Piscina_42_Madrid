@@ -1,35 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpalomin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 16:20:54 by mpalomin          #+#    #+#             */
-/*   Updated: 2025/03/01 19:29:54 by mpalomin         ###   ########.fr       */
+/*   Created: 2025/03/01 17:20:10 by mpalomin          #+#    #+#             */
+/*   Updated: 2025/03/01 18:08:36 by mpalomin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_print_comb(void)
 {
-	write(1, &c, 1);
-}
+	int	a;
+	int	b;
+	int	c;
 
-void	ft_print_alphabet(void)
-{
-	char	letra;
-
-	letra = 'a';
-	while (letra <= 'z')
+	a = '0';
+	while (a <= '7')
 	{
-		ft_putchar(letra);
-		letra++;
+		b = a + 1;
+		while (b <= '8')
+		{
+			c = b + 1;
+			while (c <= '9')
+			{
+				write (1, &a, 1);
+				write (1, &b, 1);
+				write (1, &c, 1);
+				if (a != '7')
+					write (1, ", ", 2);
+				c++;
+			}
+			b++;
+		}
+		a++;
 	}
 }
-/*
+
 int	main(void)
 {
-	ft_print_alphabet();
+	ft_print_comb();
 	return (0);
-}*/
+}
